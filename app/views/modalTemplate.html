@@ -1,0 +1,65 @@
+<div ng-if="actualDrink=='beer'" class="modalHeader">
+  <h1>BIER</h1>
+  <div class="input-group">
+          <span class="input-group-btn">
+              <button type="button" class="btn btn-danger btn-number" id="beer_minus" ng-click="minus()">
+                <span class="glyphicon glyphicon-minus"></span>
+              </button>
+          </span>
+    <input type="text" class="form-control input-number" id="beer_count" value="1" min="1" max="100" ng-model="count">
+    <span class="input-group-btn">
+              <button type="button" class="btn btn-success btn-number" id="beer_plus" ng-click="plus()">
+                  <span class="glyphicon glyphicon-plus"></span>
+              </button>
+    </span>
+  </div>
+  <div class="input-group">
+    <button class="btn booking" ng-click="bookIt('beer')">BUCHEN!</button>
+  </div>
+</div>
+
+
+<div ng-if="actualDrink=='vodka'" class="modalHeader">
+  <h1>Vodka</h1>
+  <div class="input-group">
+          <span class="input-group-btn">
+              <button type="button" class="btn btn-danger btn-number" id="vodka_minus" ng-click="minus()">
+                <span class="glyphicon glyphicon-minus"></span>
+              </button>
+          </span>
+    <input type="text" class="form-control input-number" id="vodka_count" value="1" min="1" max="100" ng-model="count">
+    <span class="input-group-btn">
+              <button type="button" class="btn btn-success btn-number" id="vodka_plus" ng-click="plus()">
+                  <span class="glyphicon glyphicon-plus"></span>
+              </button>
+    </span>
+  </div>
+  <div class="input-group">
+    <button class="btn booking" ng-click="bookIt('vodka')">BUCHEN!</button>
+  </div>
+</div>
+
+<div ng-if="actualDrink=='whiskey'" class="modalHeader">
+  <h1>Whiskey</h1>
+  <div class="input-group">
+          <span class="input-group-btn">
+              <button type="button" class="btn btn-danger btn-number" id="whiskey_minus" ng-click="minus()">
+                <span class="glyphicon glyphicon-minus"></span>
+              </button>
+          </span>
+    <input type="text" class="form-control input-number" id="whiskey_count" value="1" min="1" max="100" ng-model="count">
+    <span class="input-group-btn">
+              <button type="button" class="btn btn-success btn-number" id="whiskey_plus" ng-click="plus()">
+                  <span class="glyphicon glyphicon-plus"></span>
+              </button>
+    </span>
+  </div>
+  <div class="input-group">
+    <button class="btn booking" ng-click="bookIt('whiskey')">BUCHEN!</button>
+  </div>
+</div>
+
+
+
+
+
