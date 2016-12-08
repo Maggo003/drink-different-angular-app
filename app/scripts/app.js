@@ -8,30 +8,45 @@
  *
  * Main module of the application.
  */
-angular
-  .module('angularWebAppApp', [
+var mainModule = angular.module('angularWebAppApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch',
+    'ngMaterial',
+    'ui.router',
     'timer',
     'vesparny.fancyModal'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
+  ]);
+
+mainModule.config(function ($urlRouterProvider, $stateProvider) {
+
+  $urlRouterProvider.otherwise('/main/dashboard');
+
+  $stateProvider
+      .state('main', {
+          url: '/main',
+          controller: 'MainCtrl',
+          templateUrl: '/views/menu.html',
+          controllerAs: 'main'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+      .state('main.dashboard', {
+          url: '/dashboard',
+          views: {
+              'menuContent': {
+                  controller: 'DashboardCtrl',
+                  templateUrl: '/views/dashboard.html'
+              }
+          }
       })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+      .state('main.manage', {
+      url: '/manage',
+      views: {
+          'menuContent': {
+              controller: 'ManageCtrl',
+              templateUrl: '/views/manage.html'
+          }
+      }
+  })
+});

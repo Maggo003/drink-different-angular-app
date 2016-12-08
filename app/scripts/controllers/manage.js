@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name angularWebAppApp.controller:AboutCtrl
+ * @name angularWebAppApp.controller:ManageCtrl
  * @description
  * # AboutCtrl
  * Controller of the angularWebAppApp
  */
 angular.module('angularWebAppApp')
-  .controller('AboutCtrl', function () {
+  .controller('ManageCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
