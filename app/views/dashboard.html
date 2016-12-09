@@ -13,158 +13,46 @@
       </div>
     </timer>
   </div>
-
 </div>
 
 
 <div class="row">
-  <div class="col-lg-12 col-lg-offset-1">
-    <md-card id="ottakringer" class="col-lg-3" md-theme-watch>
+  <div class="col-lg-12 col-md-12 col-sm-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+    <md-card id="{{drink.id}}" class="col-sm-3 cards" md-theme-watch ng-repeat="drink in allDrinks">
       <md-card-header>
         <md-card-avatar>
-            <span style="font-size:16px;" class="glyphicon glyphicon-menu-right"></span>
+          <span style="font-size:16px;" class="glyphicon glyphicon-menu-right"></span>
         </md-card-avatar>
         <md-card-header-text>
-          <span class="md-title">Ottakringer Dose</span>
-          <span class="md-subhead">Preis: {{beerPrice}} €</span>
+          <span class="md-title">{{drink.title}}</span>
+          <span class="md-subhead">Preis: {{drink.price.toFixed(2)}} €</span>
         </md-card-header-text>
       </md-card-header>
-      <img src="../images/ottakringer_bier.png" class="md-card-image"/>
-      <md-card-title>
-        <md-card-title-text>
-          <span class="md-title">Anzahl: {{beerCount}} </span>
-        </md-card-title-text>
-      </md-card-title>
-      <md-card-actions layout="row" layout-align="center center">
-        <md-button ng-click="countAdd('beer')">
-          <span style="font-size:32px;"  class="glyphicon glyphicon-thumbs-up"></span>
-        </md-button>
-        <md-button ng-click="countWithdraw('beer')">
-          <span style="font-size:32px;" class="glyphicon glyphicon-thumbs-down"></span>
-        </md-button>
-      </md-card-actions>
-      <md-card-content layout="row" layout-align="space-between">
-        <p>Space for content</p>
-      </md-card-content>
-    </md-card>
+      <img src="{{drink.image}}" class="md-card-image" ng-click="drink.showModal = true" />
 
-    <md-card id="vodkaBull" class="col-lg-3" md-theme-watch>
-      <md-card-header>
-        <md-card-avatar>
-          <span style="font-size:16px;" class="glyphicon glyphicon-menu-right"></span>
-        </md-card-avatar>
-        <md-card-header-text>
-          <span class="md-title">Vodka RedBull</span>
-          <span class="md-subhead">Preis: {{vodkaPrice}} €</span>
-        </md-card-header-text>
-      </md-card-header>
-      <img src="../images/vodkaBull.png" class="md-card-image"/>
-      <md-card-title>
-        <md-card-title-text>
-          <span class="md-title">Anzahl: {{vodkaCount}} </span>
-        </md-card-title-text>
-      </md-card-title>
-      <md-card-actions layout="row" layout-align="center">
-        <md-button ng-click="countAdd('vodkaBull')">
-          <span style="font-size:32px;"  class="glyphicon glyphicon-thumbs-up"></span>
-        </md-button>
-        <md-button ng-click="countWithdraw('vodkaBull')">
-          <span style="font-size:32px;" class="glyphicon glyphicon-thumbs-down"></span>
-        </md-button>
-      </md-card-actions>
-      <md-card-content layout="row" layout-align="space-between">
-        <p>Space for content</p>
-      </md-card-content>
-    </md-card>
-
-    <md-card id="whiskeyCola" class="col-lg-3" md-theme-watch>
-      <md-card-header>
-        <md-card-avatar>
-          <span style="font-size:16px;" class="glyphicon glyphicon-menu-right"></span>
-        </md-card-avatar>
-        <md-card-header-text>
-          <span class="md-title">Whiskey Cola</span>
-          <span class="md-subhead">Preis: {{whiskeyColaPrice}} €</span>
-        </md-card-header-text>
-      </md-card-header>
-      <img src="../images/whiskeyCola.png" class="md-card-image"/>
-      <md-card-title>
-        <md-card-title-text>
-          <span class="md-title">Anzahl: {{whiskeyColaCount}} </span>
-        </md-card-title-text>
-      </md-card-title>
-      <md-card-actions layout="row" layout-align="center">
-        <md-button ng-click="countAdd('whiskeyCola')">
-          <span style="font-size:32px;"  class="glyphicon glyphicon-thumbs-up"></span>
-        </md-button>
-        <md-button ng-click="countWithdraw('whiskeyCola')">
-          <span style="font-size:32px;" class="glyphicon glyphicon-thumbs-down"></span>
-        </md-button>
-      </md-card-actions>
-      <md-card-content layout="row" layout-align="space-between">
-        <p>Space for content</p>
-      </md-card-content>
-    </md-card>
-  </div>
-</div>
-<div class="row">
-  <div class="col-lg-12 col-lg-offset-1">
-    <md-card id="spritzer" class="col-lg-3" md-theme-watch>
-      <md-card-header>
-        <md-card-avatar>
-          <span style="font-size:16px;" class="glyphicon glyphicon-menu-right"></span>
-        </md-card-avatar>
-        <md-card-header-text>
-          <span class="md-title">Spritzwein</span>
-          <span class="md-subhead">Preis: {{spritzerPrice}} €</span>
-        </md-card-header-text>
-      </md-card-header>
-      <img src="../images/spritzer.png" class="md-card-image"/>
-      <md-card-title>
-        <md-card-title-text>
-          <span class="md-title">Anzahl: {{spritzerCount}} </span>
-        </md-card-title-text>
-      </md-card-title>
-      <md-card-actions layout="row" layout-align="center">
-        <md-button ng-click="countAdd('spritzer')">
-          <span style="font-size:32px;"  class="glyphicon glyphicon-thumbs-up"></span>
-        </md-button>
-        <md-button ng-click="countWithdraw('spritzer')">
-          <span style="font-size:32px;" class="glyphicon glyphicon-thumbs-down"></span>
-        </md-button>
-      </md-card-actions>
-      <md-card-content layout="row" layout-align="space-between">
-        <p>Space for content</p>
-      </md-card-content>
-    </md-card>
-
-    <md-card id="jaeger" class="col-lg-3" md-theme-watch>
-      <md-card-header>
-        <md-card-avatar>
-          <span style="font-size:16px;" class="glyphicon glyphicon-menu-right"></span>
-        </md-card-avatar>
-        <md-card-header-text>
-          <span class="md-title">Jägermeister</span>
-          <span class="md-subhead">Preis: {{spritzerPrice}} €</span>
-        </md-card-header-text>
-      </md-card-header>
-      <img src="../images/jaeger.png" class="md-card-image"/>
-      <md-card-title>
-        <md-card-title-text>
-          <span class="md-title">Anzahl: {{spritzerCount}} </span>
-        </md-card-title-text>
-      </md-card-title>
-      <md-card-actions layout="row" layout-align="center">
-        <md-button ng-click="countAdd('whiskeyCola')">
-          <span style="font-size:32px;"  class="glyphicon glyphicon-thumbs-up"></span>
-        </md-button>
-        <md-button ng-click="countWithdraw('whiskeyCola')">
-          <span style="font-size:32px;" class="glyphicon glyphicon-thumbs-down"></span>
-        </md-button>
-      </md-card-actions>
-      <md-card-content layout="row" layout-align="space-between">
-        <p>Space for content</p>
-      </md-card-content>
+      <modal visible="drink.showModal" on-hide="modalHide(drink)">
+        <modal-header title="{{drink.title}}"></modal-header>
+        <modal-body>
+          <h5>{{(drink.price * bookingCounter).toFixed(2)}}€</h5>
+          <img src="{{drink.image}}" class="md-card-image" />
+          <div class="input-group">
+          <span class="input-group-btn">
+            <md-button ng-click="countAdd()">
+              <span style="font-size:48px;"  class="glyphicon glyphicon-thumbs-up"></span>
+            </md-button>
+          </span>
+            <input type="text" class="form-control input-number" ng-model="bookingCounter">
+            <span class="input-group-btn">
+              <md-button ng-click="countWithdraw()">
+            <span style="font-size:48px;" class="glyphicon glyphicon-thumbs-down"></span>
+          </md-button>
+            </span>
+          </div>
+        </modal-body>
+        <modal-footer>
+          <button class="btn-large btn-success bookButton" ng-click="bookIt(drink)">Save</button>
+        </modal-footer>
+      </modal>
     </md-card>
   </div>
 
@@ -173,30 +61,6 @@
   <button ng-click="calculate()">Calculate!</button>
 </div>
 
-
-<!-- TRY THE DRINK-DIVS WITH NG-REPEAT-->
-<!--
-<br>
-<br>
-<div ng-repeat="drink in drinks">
-  <md-card id="{{drink.name}}" class="col-lg-3" ng-click="count(drink.name)">
-    <md-card-title>
-      <md-card-title-text>
-        <span class="md-headline">{{drink.name}}</span>
-        <span class="md-subhead">Ottakringer</span>
-      </md-card-title-text>
-      <md-card-title-media>
-        <div class="md-media-lg card-media">
-          <img src="../images/bier.png" class="cardImage"/>
-        </div>
-      </md-card-title-media>
-    </md-card-title>
-    <md-card-actions layout="row" layout-align="center">
-      <p>Derzeitiger Preis: {{beerPrice}}€</p>
-    </md-card-actions>
-  </md-card>
-</div>
--->
 <!--
 <h1>Übersichts-Tabelle</h1>
 
@@ -209,3 +73,4 @@
 </table>
 
 <button ng-click="open('beer')">OPEN BEER-MODAL</button>
+-->

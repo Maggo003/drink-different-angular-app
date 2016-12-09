@@ -17,7 +17,7 @@ var mainModule = angular.module('angularWebAppApp', [
     'ngMaterial',
     'ui.router',
     'timer',
-    'vesparny.fancyModal'
+    'ui.bootstrap.modal'
   ]);
 
 mainModule.config(function ($urlRouterProvider, $stateProvider) {
